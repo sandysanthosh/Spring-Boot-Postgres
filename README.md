@@ -293,3 +293,22 @@ Preparing for a PostgreSQL interview involves understanding both basic and advan
 
 Preparing for these questions and understanding the underlying concepts will help you succeed in a PostgreSQL interview.
 
+
+## Run PostgreSQL locally
+
+A local PostgreSQL instance is included through Docker Compose.
+
+```bash
+docker compose up -d
+docker compose ps
+```
+
+Use the following local configuration for the sample application:
+
+```properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/appdb
+spring.datasource.username=appuser
+spring.datasource.password=apppassword
+```
+
+For real deployments, provide the URL and credentials through environment variables or a secret manager; do not commit them into source control. Stop the local database with `docker compose down` (add `-v` only when you intentionally want to remove its stored data).

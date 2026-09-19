@@ -45,7 +45,7 @@ public class User {
 ```
 
 public interface UserRepository extends JpaRepository<User, Long> {
-    // additional methods go here
+    List<User> findByAddress(String address);
 }
 
 
